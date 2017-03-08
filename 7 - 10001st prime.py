@@ -1,26 +1,27 @@
 import math
 
-def findNthPrime(n):
-  num = 5
-  primeList = [2, 3]
+def findNthPrime(N):
+  firstPrime, secondPrime = 2, 3
+  primeNumToCheck = 5
+  primeList = [firstPrime, secondPrime]
 
-  def isPrime(x):
-    i = 0
+  def isPrime(number):
+    primeIndex = 1
 
-    if x == (2 or 3):
+    if number == (2 or 3):
       return True
-    while primeList[i] <= math.sqrt(x):
-      if x % primeList[i] == 0:
+    while primeList[primeIndex] <= math.sqrt(number):
+      if number % primeList[primeIndex] == 0:
         return False
-      i += 1
+      primeIndex += 1
     return True
 
-  while len(primeList) < n:
+  while len(primeList) < N:
 
-    if isPrime(num):
-      primeList.append(num)
-    num += 1
+    if isPrime(primeNumToCheck):
+      primeList.append(primeNumToCheck)
+    primeNumToCheck += 2
 
-  return primeList[n-1]
+  return primeList[N-1]
 
 print findNthPrime(10001)
