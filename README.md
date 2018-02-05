@@ -1,2 +1,2 @@
 # project-euler
-Solving Project euler problems in Javascript
+Solving Project euler problems in Javascript (mostly)
